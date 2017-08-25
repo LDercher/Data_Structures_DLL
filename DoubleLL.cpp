@@ -8,7 +8,6 @@ DoubleLL::DoubleLL() {
 
     m_back = nullptr;
 
-  //implMe();
 }
 
 DoubleLL::~DoubleLL() {
@@ -17,7 +16,6 @@ DoubleLL::~DoubleLL() {
 }
 
 bool DoubleLL::isEmpty() {
-  //IMPLEMENT ME
 
     if (m_size > 0)
     {
@@ -28,18 +26,14 @@ bool DoubleLL::isEmpty() {
         return false;
     }
 
-//  implMe();
   return true;
 }
 
 int DoubleLL::size(){
-  //IMPLEMENT ME
-//  implMe();
   return m_size;
 }
 
 void DoubleLL::add(int elem, int position) {
-  //IMPLEMENT ME
   if (m_size == 0)
 {
     m_back = new node<int>();
@@ -65,12 +59,11 @@ else
 }
 
 m_size ++;
-  //implMe();
+
 }
 
 void DoubleLL::deleteAll(int elem) {
-  //IMPLEMENT ME
-  node<int>* temp = nullptr;
+node<int>* temp = nullptr;
 while (m_size != 0)
 {
     if (m_size == 1)
@@ -94,11 +87,9 @@ while (m_size != 0)
 
     }
   }
-  //implMe();
 }
 
 int DoubleLL::find(int elem) {
-  //IMPLEMENT ME
   node<int>* temp = m_front;
 
      while (temp!= nullptr)
@@ -114,7 +105,6 @@ int DoubleLL::find(int elem) {
      }
 
      return -1;
-  //implMe();
 
 }
 
@@ -136,6 +126,3 @@ void DoubleLL::print() {
       }
 
      }
-
-//  implMe();
-  //IMPLEMENT ME
