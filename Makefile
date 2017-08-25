@@ -17,7 +17,7 @@ util:
 	$(GCC) $(CFLAGS) -c util.cpp -o util.o
 
 list: node
-	$(GCC) $(CFLAGS)  list.cpp -o list.o
+	$(GCC) $(CFLAGS) -c list.cpp -o list.o
 
 node:
 		$(GCC) $(CFLAGS) -c node.cpp -o node.o

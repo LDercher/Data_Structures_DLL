@@ -1,6 +1,4 @@
 #include "list.hpp"
-#include "util.hpp"
-#include "node.hpp"
 
 list::list() {
 
@@ -44,7 +42,7 @@ void list::add(int elem, int position) {
   //IMPLEMENT ME
   if (m_size == 0)
 {
-    m_back = new node<int>;
+    m_back = new node<int>();
 
     m_back -> setValue(elem);
 
@@ -52,7 +50,7 @@ void list::add(int elem, int position) {
 }
 else
 {
-    node<int>* temp = new node<int>;
+    node<int>* temp = new node<int>();
 
     temp -> setValue(elem);
 

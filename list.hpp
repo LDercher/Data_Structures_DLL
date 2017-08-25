@@ -1,6 +1,7 @@
 #ifndef LIST_H
 #define LIST_H
-#include "node.hpp"
+#include "node.cpp"
+#include "util.hpp"
 
 class list {
   //Member fields
