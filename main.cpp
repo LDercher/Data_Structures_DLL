@@ -2,14 +2,14 @@
 #include <fstream>
 
 #include "util.hpp"
-#include "list.hpp"
+#include "DoubleLL.hpp"
 #include "node.hpp"
 
 using namespace std;
 
 void printMenu();
-void initialize(list* myList, int argCount, char** args);
-void cleanUp(list* myList);
+void initialize(DoubleLL* myDoubleLL, int argCount, char** args);
+void cleanUp(DoubleLL* myDoubleLL);
 /**
  * This is the main entry point for the application
  * if you want to use your own custom datafile you'd have to pass that
@@ -19,10 +19,10 @@ void cleanUp(list* myList);
 int main(int argCount, char** args){
   int option;
   int elem;
-  list* myList = new list();
+  DoubleLL* myDoubleLL = new DoubleLL();
 
-  //read from the file and initialize the doubly link list
-  initialize(myList, argCount, args);
+  //read from the file and initialize the doubly link DoubleLL
+  initialize(myDoubleLL, argCount, args);
   printMenu();
   cin >> option;
   while(option != 5){
@@ -33,25 +33,25 @@ int main(int argCount, char** args){
       cin >> newElement;
       cout << "Enter position to add element: ";
       cin >> position;
-      myList->add(newElement, position);
-      myList->print();
+      myDoubleLL->add(newElement, position);
+      myDoubleLL->print();
       break;
     case 2:
       // 2: delete
       cout << "Enter element to be deleted: ";
       cin >> elem;
-      myList->deleteAll(elem);
-      myList->print();
+      myDoubleLL->deleteAll(elem);
+      myDoubleLL->print();
       break;
     case 3:
       //3: find
       cout << "Enter element to be searched: ";
       cin >> elem;
-      myList->find(elem);
+      myDoubleLL->find(elem);
       break;
     case 4:
       //4: print
-      myList->print();
+      myDoubleLL->print();
       break;
     default:
       cout << "Invalid argument. Please try again" << endl;
@@ -61,7 +61,7 @@ int main(int argCount, char** args){
     cin >> option;
   }
 
-  cleanUp(myList);
+  cleanUp(myDoubleLL);
   return 0;
 }
 
@@ -81,7 +81,7 @@ void printMenu(){
 /**
  * Initializes the data structures and program environment
  */
-void initialize(list*  myList, int argCount, char** args){
+void initialize(DoubleLL*  myDoubleLL, int argCount, char** args){
     fstream inputData;
     if(argCount < 2){
       cout << "No input file given, using default data.txt" << endl;
@@ -93,11 +93,11 @@ void initialize(list*  myList, int argCount, char** args){
     while(!inputData.eof()){
       int newElement;
       inputData >> newElement;
-      myList->add(newElement, myList->size());
+      myDoubleLL->add(newElement, myDoubleLL->size());
     }
     inputData.close();
 }
 
-void cleanUp(list* myList){
-  delete myList;
+void cleanUp(DoubleLL* myDoubleLL){
+  delete myDoubleLL;
 }

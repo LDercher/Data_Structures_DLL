@@ -3,12 +3,12 @@ LAB_NAME=doubly-linked-list-lab-1
 GCC=g++
 CFLAGS=-Wall -g -pedantic --std=c++11
 
-FILES=Makefile main.cpp list.hpp list.cpp util.cpp util.hpp node.hpp node.cpp data.txt
+FILES=Makefile main.cpp DoubleLL.hpp DoubleLL.cpp util.cpp util.hpp node.hpp node.cpp data.txt
 
 ARCHIVE_FOLDER=$(STUDENT_ID)-$(LAB_NAME)
 
-build: list util main node
-	$(GCC) $(CFLAGS) -o main list.o util.o main.o node.o
+build: DoubleLL util main node
+	$(GCC) $(CFLAGS) -o main DoubleLL.o util.o main.o node.o
 
 test:
 	./main
@@ -16,13 +16,13 @@ test:
 util:
 	$(GCC) $(CFLAGS) -c util.cpp -o util.o
 
-list: node
-	$(GCC) $(CFLAGS) -c list.cpp -o list.o
+DoubleLL: node
+	$(GCC) $(CFLAGS) -c DoubleLL.cpp -o DoubleLL.o
 
 node:
 		$(GCC) $(CFLAGS) -c node.cpp -o node.o
 
-main: list
+main: DoubleLL
 	$(GCC) $(CFLAGS) -c main.cpp -o main.o
 
 clean:
