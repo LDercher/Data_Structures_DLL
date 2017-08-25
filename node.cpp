@@ -4,6 +4,7 @@
 *	@date : 2017.08.25
 *	Purpose: Implementation file of templated double linked node class.
 */
+#include "node.hpp"
 
 template <class T>
 node<T>::node()
