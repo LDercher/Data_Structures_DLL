@@ -93,9 +93,12 @@ void initialize(DoubleLL*  myDoubleLL, int argCount, char** args){
     while(!inputData.eof()){
       int newElement;
       inputData >> newElement;
+      if (inputData.good()){
       myDoubleLL->add(newElement, myDoubleLL->size());
     }
+    }
     inputData.close();
+    myDoubleLL->print();
 }
 
 void cleanUp(DoubleLL* myDoubleLL){

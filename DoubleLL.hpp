@@ -2,12 +2,13 @@
 #define DoubleLL_H
 #include "node.cpp"
 #include "util.hpp"
+#include <stdexcept>
 
 class DoubleLL {
 
 private:
 
-      node<int>* m_front;
+
 
       node<int>* m_back;
 
@@ -15,6 +16,8 @@ private:
 
   //Member functions
  public:
+
+   node<int>* m_front;
   /**
    * Public constructor to construct the DoubleLL
    */
@@ -53,6 +56,15 @@ private:
    */
   int find(int elem);
 
+ /**
+  * Adds a node to the front of the DLL
+  */
+ void addFront(int elem);
+
+ /**
+  * Add a node to the end of the DLL
+  */
+ void addBack (int elem);
 
   /**
    * Prints all the elements of the DoubleLL with delimited with space
