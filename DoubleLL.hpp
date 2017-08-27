@@ -8,16 +8,15 @@ class DoubleLL {
 
 private:
 
+   node<int>* m_front;
 
+   node<int>* m_back;
 
-      node<int>* m_back;
-
-      int m_size;
+   int m_size;
 
   //Member functions
  public:
 
-   node<int>* m_front;
   /**
    * Public constructor to construct the DoubleLL
    */

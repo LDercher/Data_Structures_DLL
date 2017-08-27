@@ -30,9 +30,9 @@ T node<T>::getValue()
 }
 
 template <class T>
-void node<T>::setNext(node<T>* prev)
+void node<T>::setNext(node<T>* n)
 {
-    m_next = prev;
+    m_next = n;
 }
 
 template <class T>
@@ -42,9 +42,9 @@ node<T>* node<T>::getNext()
 }
 
 template <class T>
-void node<T>::setPrev (node<T>* next)
+void node<T>::setPrev (node<T>* n)
 {
-    m_prev = next;
+    m_prev = n;
 }
 
 template <class T>
