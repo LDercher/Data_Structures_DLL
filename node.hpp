@@ -1,7 +1,7 @@
 /**
 *	@file : node.h
 *	@author :  Luke Dercher
-*	@date : 2015.02.15
+*	@date : 2017.08.25
 *	Purpose: Header file of templated Double linked node Class.
 */
 
