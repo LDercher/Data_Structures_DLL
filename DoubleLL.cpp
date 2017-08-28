@@ -141,9 +141,9 @@ void DoubleLL::deleteAll(int elem) {
 
       m_front->setPrev(nullptr);
 
-      temp = m_front;
+      delete temp;
 
-      delete temp->getPrev();
+      temp = m_front;
 
     }
     else if(temp == m_back)
@@ -152,9 +152,9 @@ void DoubleLL::deleteAll(int elem) {
 
       m_back->setNext(nullptr);
 
-      temp = m_back;
+      delete temp;
 
-      delete temp->getNext();
+      temp = m_back;
 
     }
     else
@@ -167,17 +167,13 @@ void DoubleLL::deleteAll(int elem) {
 
       temp_next->setPrev(temp_prev);
 
-      // temp = temp->getPrev(); //temp = temp_prev
-      //
-      // delete temp->getNext();
-
       delete temp;
-      temp = m_front;
+
+      temp = temp_prev;
 
     }
 
     m_size--;
-    printf("GOT HERE\n");
 
   }
 
@@ -215,6 +211,8 @@ void DoubleLL::addBack(int elem)
 int DoubleLL::find(int elem) {
   node<int>* temp = m_front;
 
+  int i = 0;
+
      while (temp!= nullptr)
      {
           if (temp->getValue() == elem)
@@ -223,6 +221,8 @@ int DoubleLL::find(int elem) {
               return temp->getValue();
 
           }
+
+	  i++;
 
           temp = temp->getNext();
      }
@@ -241,7 +241,7 @@ void DoubleLL::print() {
 
         for (int i = 0; i < m_size; i++ )
         {
-          printf("(%i)%i ", i, temp->getValue());
+          printf(" %i ", temp->getValue());
           temp = temp->getNext();
         }
 	printf("\n\n");

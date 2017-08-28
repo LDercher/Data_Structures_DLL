@@ -47,7 +47,7 @@ int main(int argCount, char** args){
       //3: find
       cout << "Enter element to be searched: ";
       cin >> elem;
-      myDoubleLL->find(elem);
+      printf("%i\n\n", myDoubleLL->find(elem));
       break;
     case 4:
       //4: print
