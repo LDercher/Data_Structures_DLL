@@ -33,6 +33,16 @@ private:
   bool isEmpty();
 
   /**
+   * returns front of DLL
+   */
+  node<int>* getFront();
+
+  /**
+   * returns tail of DLL
+   */
+  node<int>* getBack();
+
+  /**
    * returns the size of the linked DoubleLL
    */
   int size();
@@ -55,6 +65,12 @@ private:
    */
   int find(int elem);
 
+  /**
+   * Should find the index of the first occurence of the position of the element in the DoubleLL.
+   * returns -1 if the element does not exist in the DoubleLL
+   */
+  int findInd(int elem);
+
  /**
   * Adds a node to the front of the DLL
   */
@@ -69,6 +85,12 @@ private:
    * Prints all the elements of the DoubleLL with delimited with space
    */
   void print();
+
+  /**
+   * @input a DLL populated with nodes containing integers
+   * @Returns a pointer to a list of first occurrances of every item in the DLL
+   */
+  DoubleLL* getPositionList( DoubleLL* );
 };
 
 #endif //DOUBLY_LINKED_DoubleLL_H defined

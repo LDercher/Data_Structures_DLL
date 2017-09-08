@@ -26,6 +26,16 @@ node<int>* next = nullptr;
 
 }
 
+node<int>* DoubleLL::getFront()
+{
+  return m_front;
+}
+
+node<int>* DoubleLL::getBack()
+{
+  return m_back;
+}
+
 bool DoubleLL::isEmpty() {
 
     if (m_size > 0)
@@ -208,6 +218,7 @@ void DoubleLL::addBack(int elem)
 
 }
 
+
 int DoubleLL::find(int elem) {
   node<int>* temp = m_front;
 
@@ -219,6 +230,29 @@ int DoubleLL::find(int elem) {
           {
 
               return temp->getValue();
+
+          }
+
+	  i++;
+
+          temp = temp->getNext();
+     }
+
+     return -1;
+
+}
+
+int DoubleLL::findInd(int elem) {
+  node<int>* temp = m_front;
+
+  int i = 0;
+
+     while (temp!= nullptr)
+     {
+          if (temp->getValue() == elem)
+          {
+
+              return i;
 
           }
 
@@ -253,3 +287,27 @@ void DoubleLL::print() {
       }
 
      }
+
+
+DoubleLL* DoubleLL::getPositionList( DoubleLL* list ){
+
+    int tempVal;
+
+    DoubleLL* posList = new DoubleLL();
+
+    node<int>* listIter = list->getFront();
+
+    while(listIter != nullptr)
+    {
+
+      tempVal = find(listIter->getValue());
+
+      posList->addBack(tempVal);
+
+      listIter = listIter->getNext();
+
+    }
+
+    return posList;
+
+}
